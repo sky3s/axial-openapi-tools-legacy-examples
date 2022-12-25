@@ -1,2 +1,2 @@
-# spring-openapi-manager-examples
-Examples for Axial Spring OpenApi Manager
+# spring-openapi-manager-legacy-examples
+Examples for Axial Spring OpenApi Manager Legacy

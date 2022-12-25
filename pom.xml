@@ -6,22 +6,22 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.0.1</version>
+        <version>2.7.7</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
     <groupId>com.axial.spring.modules</groupId>
-    <artifactId>spring-openapi-manager-examples</artifactId>
+    <artifactId>spring-openapi-manager-legacy-examples</artifactId>
     <version>0.0.1</version>
 
     <packaging>war</packaging>
 
-    <name>spring-openapi-manager-examples</name>
-    <description>spring-openapi-manager-examples</description>
+    <name>spring-openapi-manager-legacy-examples</name>
+    <description>spring-openapi-manager-legacy-examples</description>
 
     <properties>
 
-        <java.version>17</java.version>
+        <java.version>8</java.version>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -40,7 +40,7 @@
         <jakarta-servlet-api.version>6.0.0</jakarta-servlet-api.version>
 
         <!-- Axial Spring Modules -->
-        <openapi-manager.version>0.0.1</openapi-manager.version>
+        <openapi-manager-legacy.version>0.0.1</openapi-manager-legacy.version>
 
         <!-- Annotation Processor Dependencies-->
         <lombok.version>1.18.24</lombok.version>
@@ -65,8 +65,8 @@
         <!-- Axial Spring Modules -->
         <dependency>
             <groupId>com.axial.spring.modules</groupId>
-            <artifactId>openapi-manager</artifactId>
-            <version>${openapi-manager.version}</version>
+            <artifactId>openapi-manager-legacy</artifactId>
+            <version>${openapi-manager-legacy.version}</version>
         </dependency>
 
         <!-- Annotation Processor Dependencies-->
