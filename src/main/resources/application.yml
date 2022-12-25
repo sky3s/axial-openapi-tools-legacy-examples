@@ -1,7 +1,7 @@
 
 api-config:
-  name: Application Apis # @project.description@
-  version: 1.0.0 # @project.version@
+  name: Application Apis
+  version: @project.version@
   domains:
     - /demo-app
     - /demo-app-external
