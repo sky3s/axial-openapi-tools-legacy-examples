@@ -1,0 +1,71 @@
+
+api-config:
+  name: Application Apis # @project.description@
+  version: 1.0.0 # @project.version@
+  domains:
+    - /demo-app
+    - /demo-app-external
+    - http://localhost:8088/demo-app
+  common-security-headers:
+    TOKEN:
+      key: TokenAuth
+      name: X-Token
+      description: Please enter your token
+  common-headers:
+    DEMO_COMM_HEADER:
+      name: X-CommonDemoHeader
+      required: false
+      default-value: demo
+      example: demoBigDemo
+      description: Demo Big demo
+  apis:
+    BASIC_API:
+      name: BasicAPI
+      group-name: Basic API
+      description: Demo Application Basic Services
+      path: /basic/**
+      headers:
+        IDENTITY_NUMBER:
+          name: X-IdentityNumber
+          required: true
+          example: 12345678901
+          description: Unique identity number of user logged in
+    ADVANCED_API:
+      name: AdvancedAPI
+      group-name: Advanced API
+      description: Demo Application Advanced Services
+      path: /advanced/**
+      security-headers:
+        DEMO_USERNAME:
+          key: UserId
+          name: X-UserId
+          description: Unique ID of user
+      headers:
+        DEMO_HEADER:
+          name: X-DemoHeader
+          required: false
+          example: 12345678901
+          description: Demo Header Description
+
+server:
+  servlet:
+    context-path: /demo-app
+    session:
+      cookie:
+        secure: true
+  port: 8088
+
+springdoc:
+  swagger-ui:
+    try-it-out-enabled: true
+    filter: true
+
+spring:
+  application:
+    name: demo-application
+  profiles:
+    active: dev
+  cloud:
+    config:
+      enabled: false
+      fail-fast: false
