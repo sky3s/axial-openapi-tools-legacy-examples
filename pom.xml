@@ -4,128 +4,35 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.7.7</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <groupId>com.axialworks</groupId>
+        <artifactId>spring-parent-pom</artifactId>
+        <version>0.0.1</version>
     </parent>
 
-    <groupId>com.axial.spring.modules</groupId>
+    <groupId>com.axialworks.spring.modules</groupId>
     <artifactId>spring-openapi-manager-legacy-examples</artifactId>
     <version>0.0.1</version>
 
     <packaging>war</packaging>
 
-    <name>spring-openapi-manager-legacy-examples</name>
-    <description>spring-openapi-manager-legacy-examples</description>
+    <name>Axial Openapi Legacy Tools Examples</name>
+    <description>Axial Openapi Legacy Tools Examples for Spring Boot 2.7</description>
 
     <properties>
-
-        <java.version>8</java.version>
-
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-
-        <maven.build.timestamp.format>yyyy_MM_dd_HH_mm</maven.build.timestamp.format>
-        <timestamp>${maven.build.timestamp}</timestamp>
-
-        <!-- Maven Dependencies -->
-        <maven-war-plugin.version>3.1.0</maven-war-plugin.version>
-        <maven-compiler-plugin.version>3.10.1</maven-compiler-plugin.version>
-
-        <!-- Spring Dependencies -->
-        <spring-boot-maven-plugin.version>3.0.1</spring-boot-maven-plugin.version>
-
-        <!-- Java Dependencies -->
-        <jakarta-servlet-api.version>6.0.0</jakarta-servlet-api.version>
+        <legacy-project>true</legacy-project>
 
         <!-- Axial Spring Modules -->
-        <openapi-manager-legacy.version>0.0.1</openapi-manager-legacy.version>
-
-        <!-- Annotation Processor Dependencies-->
-        <lombok.version>1.18.24</lombok.version>
+        <axial-openapi-tools-legacy.version>0.0.1-SNAPSHOT</axial-openapi-tools-legacy.version>
 
     </properties>
 
     <dependencies>
-
-        <!-- Spring Dependencies -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-
-        <!-- Java Dependencies -->
-        <dependency>
-            <groupId>jakarta.servlet</groupId>
-            <artifactId>jakarta.servlet-api</artifactId>
-            <version>${jakarta-servlet-api.version}</version>
-        </dependency>
-
         <!-- Axial Spring Modules -->
         <dependency>
-            <groupId>com.axial.spring.modules</groupId>
-            <artifactId>openapi-manager-legacy</artifactId>
-            <version>${openapi-manager-legacy.version}</version>
+            <groupId>com.axialworks.spring.modules</groupId>
+            <artifactId>axial-openapi-tools-legacy</artifactId>
+            <version>${axial-openapi-tools-legacy.version}</version>
         </dependency>
-
-        <!-- Annotation Processor Dependencies-->
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>${lombok.version}</version>
-        </dependency>
-
     </dependencies>
-
-    <build>
-
-        <finalName>${project.artifactId}-${project.version}</finalName>
-
-        <plugins>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>${maven-compiler-plugin.version}</version>
-                <configuration>
-                    <annotationProcessorPaths>
-                        <path>
-                            <groupId>org.projectlombok</groupId>
-                            <artifactId>lombok</artifactId>
-                            <version>${lombok.version}</version>
-                        </path>
-                      </annotationProcessorPaths>
-                </configuration>
-            </plugin>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-war-plugin</artifactId>
-                <version>${maven-war-plugin.version}</version>
-                <!--Adding a provided "spring-boot-starter-tomcat" dependency as stated in-->
-                <!--here https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#howto-create-a-deployable-war-file-->
-                <!--doesn't work. The generated war runs on Weblogic but the project won't run via spring-boot:run or via IDE-->
-                <configuration>
-                    <packagingExcludes>WEB-INF/lib/tomcat-*.jar</packagingExcludes>
-                </configuration>
-            </plugin>
-
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>${spring-boot-maven-plugin.version}</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>repackage</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-
-        </plugins>
-
-    </build>
 
 </project>

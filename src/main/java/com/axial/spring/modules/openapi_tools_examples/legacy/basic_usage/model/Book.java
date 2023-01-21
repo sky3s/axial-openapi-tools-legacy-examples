@@ -1,4 +1,4 @@
-package com.axial.spring.modules.openapi_manager_examples.basic_usage.model;
+package com.axial.spring.modules.openapi_tools_examples.legacy.basic_usage.model;
 
 import lombok.Builder;
 import lombok.Getter;

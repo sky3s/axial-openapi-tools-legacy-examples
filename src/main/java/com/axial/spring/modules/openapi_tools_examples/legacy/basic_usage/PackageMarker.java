@@ -1,4 +1,4 @@
-package com.axial.spring.modules.openapi_manager_examples.basic_usage;
+package com.axial.spring.modules.openapi_tools_examples.legacy.basic_usage;
 
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;

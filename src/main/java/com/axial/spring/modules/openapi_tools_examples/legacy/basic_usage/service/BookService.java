@@ -1,6 +1,6 @@
-package com.axial.spring.modules.openapi_manager_examples.basic_usage.service;
+package com.axial.spring.modules.openapi_tools_examples.legacy.basic_usage.service;
 
-import com.axial.spring.modules.openapi_manager_examples.basic_usage.model.Book;
+import com.axial.spring.modules.openapi_tools_examples.legacy.basic_usage.model.Book;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import org.apache.commons.lang3.StringUtils;
